@@ -4,7 +4,7 @@
 ## Compilacion
 1. Clonar este repositorio.
 2. Ubicarse en una terminal en el proyecto clonado.
-3. Ejecutar `docker build . -t archiplus/node-pica`
+3. Ejecutar `docker build . -t archiplus/parking-locations`
 4. Verficar imagen creada `docker image ls`
 
 
@@ -15,15 +15,15 @@
 4. Ejecutar `docker compose up -d`
 5. Listo
 
-**Nota:** Asegurarse de que los puertos *3000* y *3307* se encuentren libres antes de ejecutar el paso 4.
+**Nota:** Asegurarse de que el puerto *3000* se encuentre libre antes de ejecutar el paso 4.
 
 ## Despliegue con Kubernetes
 1. Clonar este repositorio.
 2. Ubicarse en una terminal en el proyecto clonado.
-3. Ejecutar `docker build . -t archiplus/node-pica`
-4. Solo en K3S `docker save archiplus/node-pica | sudo k3s ctr images import -`
+3. Ejecutar `docker build . -t archiplus/parking-locations`
+4. Solo en K3S `docker save archiplus/parking-locations | sudo k3s ctr images import -`
 5. Ejecutar `kubectl apply -f mysql-pv.yml`
-6. Ejecutar `kubectl apply -f reto-pica.yml`
+6. Ejecutar `kubectl apply -f parking-locations.yml`
 7. Listo
 
 ## Tecnologías
@@ -34,10 +34,4 @@
 - Docker
 
 ## Postman
-La colección de postman con los servicios GET y POST es el archivo ***auth.postman_collection.json***.
-
-En esta colección se encuentran:
-- **GET** Petición para buscar usuario.
-- **POST** Petición para crear usuario.
-- **POST** Para hacer Login.
-- **GET** Para verificar el token.# parking_auth
+La colección de postman con los servicios GET y POST es el archivo ***locations.postman_collection.json***.
